@@ -1,0 +1,18 @@
+create table student(name varchar(10),regno number(3) unique,branch varchar(3));
+alter table student add phno number(10);
+alter table student add sec varchar(1);
+alter table student add course varchar(10);
+insert into student values('praveen',321,'CSE',948432116,'C','html');
+insert into student values('naveen',322,'CSE',992352543,'C','j.script');
+insert into student values('nandu',323,'CSE',9865456223,'C','java');
+insert into student values('chandu',324,'CSE',983244243,'D','DS');
+alter table student add email varchar(10);
+alter table student modify email varchar(20);
+alter table student drop column sec;
+delete from student where name='praveen';
+update student set name='nayak',branch='ECE' where regno=323;
+update student set email='naveen@gmail.com' where regno=322;
+update student set email='nayak@gmail.com' where regno=323;
+update student set email='chandu@gmail.com' where regno=324;
+select *from student;
+truncate table student;
