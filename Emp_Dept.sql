@@ -30,5 +30,12 @@ select *from emp order by deptno asc,sal desc;
 select* from emp where sal=(select sal from emp where empno=7902);
 select distinct job from emp;
 select * from emp where sal<any (select sal from emp where ename='ford');
-select ename,empno,sal,sal+sal*0.15 as increased_sal
-from emp
+select ename,empno,sal,sal+sal*0.15 as increased_sal from emp;
+select dname from dept where deptno not in (select deptno from emp );
+select avg(sal) from emp where job = 'SALESMAN';
+select ename from emp where ename like '_L%' or ename like '_l%';
+select max(sal) as max,min(sal) as min from emp;
+select dname from dept where deptno in(select deptno from emp group by deptno having count(*)=3);
+select sum(sal),deptno from emp group by deptno;
+select max(sal),min(sal) from emp group by deptno;
+select * from emp where job<>'MANAGER';
