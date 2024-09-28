@@ -53,3 +53,4 @@ select * from emp where sal <=  (select sal from emp where ename='ADAMS');
 select ename from emp where mgr in (select empno from emp where ename='BLAKE');
 select ename,sal,dname,loc from emp natural join dept;
 select * from emp natural join dept where loc='DALLAS';
+select ename from emp max(comm) from emp;
